@@ -1,0 +1,51 @@
+:root {
+    --primary: #DF2829;
+    --secondary: #F9EB2A;
+    --bg: #F3F3F3;
+    --primary-dark: #c82021;
+    --primary-light: #ff4445;
+    --card-bg: #ffffff;
+    --text-primary: #2d3748;
+    --text-secondary: #718096;
+    --border: #e2e8f0;
+    --success: #48bb78;
+    --warning: #ed8936;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url("/AlimentaAngola/fonts/Poppins-Regular.ttf");
+}
+
+* {
+    font-family: 'Poppins';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert.success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.alert.error {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}

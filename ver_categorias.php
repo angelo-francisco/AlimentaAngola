@@ -16,11 +16,11 @@ $categorias = pegarCategorias($conn);
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/adicionar_produto.css">
   <link rel="icon" type="image/x-icon" href="imgs/logo.png">
-  
+
   <title>Ver Categorias | AlimentaAngola</title>
 </head>
-<body>
-  <h1>Lista de Categorias</h1>
+<b>
+  <h1>Lista de Categorias</h1> 
 
   <?php if (count($categorias) > 0): ?>
     <ul>

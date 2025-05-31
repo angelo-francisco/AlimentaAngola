@@ -32,12 +32,12 @@
       <form id="product-form" action="processar_adicionar_produto.php" method="POST" enctype="multipart/form-data">
         <div class="form-grid">
           <div class="form-group">
-            <label for="nome" class="form-label">Nome do Produto *</label>
+            <label for="nome" class="form-label">Nome do Produto</label>
             <input type="text" id="nome" name="nome" class="form-input" required placeholder="Ex: Maçã, Pão">
           </div>
 
           <div class="form-group">
-            <label for="categoria" class="form-label">Categoria *</label>
+            <label for="categoria" class="form-label">Categoria</label>
             <select id="categoria" name="categoria" class="form-select" required>
               <option selected disabled>Selecione uma categoria</option>
               <?php
@@ -49,7 +49,7 @@
           </div>
 
           <div class="form-group">
-            <label for="preco" class="form-label">Preço *</label>
+            <label for="preco" class="form-label">Preço</label>
             <div class="price-group">
               <input type="number" id="preco" name="preco" class="form-input" required placeholder="0.00" step="0.01" min="0">
             </div>

@@ -8,6 +8,7 @@ function adicionarMensagem($mensagem, $mensagem_tipo, $url) {
   exit;
 }
 
+// ela verifica se dentro da secion há achar mensagem,
 function mostrarMensagens() {
   if (isset($_SESSION["mensagem"])) {
     $tipo = htmlspecialchars($_SESSION["mensagem_tipo"]);

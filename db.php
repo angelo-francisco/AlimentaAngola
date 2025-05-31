@@ -1,6 +1,7 @@
 <?php
   session_start();
   
+  //inicia conexao com o banco de dados.
   require_once "mensagens.php";
   
   $USUARIO = "root";

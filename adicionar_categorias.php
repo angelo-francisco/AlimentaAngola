@@ -29,7 +29,7 @@
     <?= mostrarMensagens() ?>
     
     <div class="form-container">
-      <form id="product-form" action="ver_categoria.php" method="POST" enctype="multipart/form-data">
+      <form id="product-form" action="processar_categoria.php" method="POST" enctype="multipart/form-data"></form>
         <div class="form-grid">
           <div class="form-group">
             <label for="nome" class="form-label">Nome da categoria</label>

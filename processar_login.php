@@ -23,7 +23,7 @@
           adicionarMensagem("Username/Password incorrectos", "error", "login.php");
         }
 
-        //ele pega na session iniciada e euqarda apenas as informações do usuario.
+        //ele pega na session iniciada e guarda apenas as informações do usuario.
         $_SESSION["usuario"] = $usuario;
         $_SESSION["usuario_esta_logado"] = true;
         

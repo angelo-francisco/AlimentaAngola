@@ -37,7 +37,7 @@
           </div>
 
         <div class="btn-group">
-          <button type="submit" class="btn btn-primary">Adicionar Produto</button>
+          <button type="submit" class="btn btn-primary">Adicionar categoria</button>
         </div>
       </form>
     </div>  

@@ -23,7 +23,7 @@
           adicionarMensagem("Username/Password incorrectos", "error", "login.php");
         }
 
-        //ele pega na session iniciada e guarda apenas as informações do usuario.
+        // Ele guarda na session iniciada o usuário e tmb o "usuario_esta_logado" como true, para eu saber que o user está logado ou não. Assim podemos ter acesso às informações do user sem fazer pesquisas directas ao banco de dados
         $_SESSION["usuario"] = $usuario;
         $_SESSION["usuario_esta_logado"] = true;
         

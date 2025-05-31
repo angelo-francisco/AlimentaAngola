@@ -44,7 +44,7 @@
   } ?>
 
   <footer>
-    © 2025 AlimentaAngola. Todos os direitos reservados.
+     &copy;2025 AlimentaAngola. Todos os direitos reservados.
   </footer>
 </body>
 </html>

@@ -19,6 +19,7 @@
           adicionarMensagem("Este usuário não está registrado", "error", "login.php");
         }
 
+    
         if (password_verify($usuario["password"], $password)) {
           adicionarMensagem("Username/Password incorrectos", "error", "login.php");
         }

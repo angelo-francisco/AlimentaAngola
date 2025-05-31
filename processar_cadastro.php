@@ -29,6 +29,8 @@
 
         $username = mysqli_real_escape_string($conn, $_POST['username']);
         $email = mysqli_real_escape_string($conn, $_POST['email']);
+
+        //Criptografar a senha. quando uma senha passar por essa string, ela vai ficar toda bagunçada. 
         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
         $query = "INSERT INTO tb_usuarios(username, email, password, cargo) VALUES ('$username', '$email', '$password', 'user')";

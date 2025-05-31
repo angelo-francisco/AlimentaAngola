@@ -14,7 +14,7 @@ $categorias = pegarCategorias($conn);
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/base.css">  
   <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="css/adicionar_produto.css">
+  <link rel="stylesheet" href="css/a.css">
   <link rel="icon" type="image/x-icon" href="imgs/logo.png">
 
   <title>Ver Categorias | AlimentaAngola</title>
@@ -22,17 +22,15 @@ $categorias = pegarCategorias($conn);
 <b>
   <h1>Lista de Categorias</h1> 
 
-  <?php if (count($categorias) > 0): ?>
-    <ul>
-      <?php foreach($categorias as $categoria): ?>
-        <li>
-          ID: <?= htmlspecialchars($categoria['id_categoria']) ?> -
-          Nome: <?= htmlspecialchars($categoria['nome']) ?>
-        </li>
-      <?php endforeach; ?>
-    </ul>
-  <?php else: ?>
-    <p>Não há categorias cadastradas.</p>
-  <?php endif; ?>
+  <?php foreach($categorias as $categoria): ?>
+  <li>
+    ID: <?= htmlspecialchars($categoria['id_categoria']) ?> -
+    Nome: <?= htmlspecialchars($categoria['nome']) ?>
+    |
+    <a href="eliminar_categoria.php?id=<?= $categoria['id_categoria'] ?>" onclick="return confirm('Tem certeza que deseja eliminar esta categoria?')">
+      Eliminar
+    </a>
+  </li>
+<?php endforeach; ?>
 </body>
 </html>

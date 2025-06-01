@@ -1,10 +1,18 @@
 <?php
+
+//SERVE PARA IMPORTAR O CONTEUDO DO ARQUIVO "DB.PHP", ONDE ESTÁ A CONEXÃO BANCO DE DADOS E AS FUÇÕES.
   require_once "db.php";
 
+  //VERIFICA SE A PESSOA ESTÁ LOGADA NO SITEMA.
   apenasPessoasLogadas();
+
+  //VERFICA SE A PESSSOA LOGADA É UM ADMINISTRADOR.
   apenasAdmins();
   
+  //ESTA FUNÇÃO PEGA TODAS AS CATEGORIAS SALVAS NO BANCO DE DADOS E AS COLOCA NA VARIÁVEL "$CATEGORIA".
   $categorias = pegarCategorias($conn);
+
+  //CRIAR A VARIAVEL "$PRODUTO" VAZIA, POIS ELA SÓ SERÁ USADA SE FOR UMA EDIÇÃO.
   $produto = null;
   
   if (isset($_GET["id_produto"]) && is_numeric($_GET["id_produto"])) {

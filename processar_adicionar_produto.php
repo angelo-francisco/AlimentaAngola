@@ -3,9 +3,14 @@
   require_once "db.php";
   
   apenasAdmins();
-
+  
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST["nome"], $_POST["categoria"], $_POST["preco"], $_POST["descricao"], $_FILES["foto"])) {
+    $id_produto = null;
+    if (isset($_GET["id_produto"]) && is_numeric($_GET["id_produto"])) {
+        $id_produto = $_GET["id_produto"];
+    }
+    
+  if (isset($_POST["nome"], $_POST["categoria"], $_POST["preco"], $_POST["descricao"], $_FILES["foto"])) {
       $nome = trim($_POST["nome"]);
       $categoria = trim($_POST["categoria"]);
       $preco = trim($_POST["preco"]);
@@ -32,10 +37,19 @@
         $categoria = mysqli_real_escape_string($conn, $categoria);
         $foto = mysqli_real_escape_string($conn, $caminhoCompleto); 
         
-        $resultado = mysqli_query($conn, "INSERT INTO tb_produtos(nome, descricao, preco, id_categoria, foto) VALUES ('$nome', '$descricao', '$preco', '$categoria', '$foto')");
-
+        if ($id_produto) {
+          $id_produto = mysqli_real_escape_string($conn, $id_produto);
+          $resultado = mysqli_query($conn, "UPDATE tb_produtos SET nome = '$nome', descricao = '$descricao', preco = '$preco', id_categoria = '$categoria', foto = '$foto' WHERE id_produto = '$id_produto'");
+        } else {
+          $resultado = mysqli_query($conn, "INSERT INTO tb_produtos(nome, descricao, preco, id_categoria, foto) VALUES ('$nome', '$descricao', '$preco', '$categoria', '$foto')");
+        }  
+        
         if ($resultado) {
-          adicionarMensagem("Novo produto adicionado com sucesso", "success", "adicionar_produto.php");
+           if ($id_produto) {
+              adicionarMensagem("Produto atualizado com sucesso", "success", "adicionar_produto.php");
+            } else {
+              adicionarMensagem("Novo produto adicionado com sucesso", "success", "adicionar_produto.php");
+            }
         } else {
           adicionarMensagem("Falha ao adicionar produto, tente mais tarde.", "error", "adicionar_produto.php");
         }

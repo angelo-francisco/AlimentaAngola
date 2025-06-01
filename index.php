@@ -17,12 +17,14 @@
 <body>
   <?php include("navbar.php"); ?>
 
+  <?= mostrarMensagens() ?>
+  
   <div class="container">
   <?php foreach ($produtos as $produto) { ?>
       <div class="produto loading">
           <img src="<?= htmlspecialchars($produto["foto"]) ?>" alt="<?= htmlspecialchars($produto["nome"]) ?>" class="produto-image">
           <div class="produto-content">
-              <a href="produto.php?id=<?= $produto["id_produto"] ?>"><?= htmlspecialchars($produto["nome"]) ?></a>
+              <a href="ver_produto.php?id_produto=<?= $produto["id_produto"] ?>"><?= htmlspecialchars($produto["nome"]) ?></a>
 
               <div class="preco-quantidade">
                 <p class="preco"><?= number_format($produto['preco'], 2, ',', '.') ?> Kz</p>
@@ -50,7 +52,6 @@
     HTML;
   } ?>
   </div>
-
 </body>
 </html>
 

@@ -76,9 +76,25 @@
   }
 
   function pegarCategoriaPeloId($conn, $id_categoria) {
-    $resultado = mysqli_query($conn, "SELECT * FROM tb_categorias WHERE id_categoria={$id_categoria}");
+    $id_categoria = mysqli_real_escape_string($conn, $id_categoria);
+    $resultado = mysqli_query($conn, "SELECT * FROM tb_categorias WHERE id_categoria='$id_categoria'");
     $categoria = mysqli_fetch_assoc($resultado);
 
     return $categoria;
+  }
+
+  function pegarProdutoPeloId($conn, $id_produto) {
+    $id_produto = mysqli_real_escape_string($conn, $id_produto);
+    $resultado = mysqli_query($conn, "SELECT * FROM tb_produtos WHERE id_produto='$id_produto'");
+    $produto = mysqli_fetch_assoc($resultado);
+
+    return $produto;
+  }
+
+  function eliminarProduto($conn, $id_produto) {
+    $id_produto = mysqli_real_escape_string($conn, $id_produto);
+    $resultado = mysqli_query($conn, "DELETE FROM tb_produtos WHERE id_produto='$id_produto'");
+
+    return $resultado ? true : false;
   }
 ?>

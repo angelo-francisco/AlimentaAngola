@@ -1,0 +1,67 @@
+.produtos-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-family: Arial, sans-serif;
+}
+
+.produtos-tabela thead {
+  background: var(--primary);
+  color: white;
+}
+
+.produtos-tabela th,
+.produtos-tabela td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.produtos-tabela tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.td-action {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.td-action .btn-acao {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.td-action .editar {
+  color: #3b82f6;
+}
+
+.td-action .editar:hover {
+  color: #2563eb;
+}
+
+.td-action .deletar {
+  color: #ef4444;
+}
+
+.td-action .deletar:hover {
+  color: #b91c1c;
+}
+
+.td-action .visualizar {
+  color: #10b981;
+}
+
+.td-action .visualizar:hover {
+  color: #047857;
+}
+

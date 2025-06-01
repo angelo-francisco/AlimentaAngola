@@ -74,4 +74,11 @@
 
     return $produtos;
   }
+
+  function pegarCategoriaPeloId($conn, $id_categoria) {
+    $resultado = mysqli_query($conn, "SELECT * FROM tb_categorias WHERE id_categoria={$id_categoria}");
+    $categoria = mysqli_fetch_assoc($resultado);
+
+    return $categoria;
+  }
 ?>

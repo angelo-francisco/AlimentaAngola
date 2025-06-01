@@ -91,8 +91,10 @@
         <div class="btn-group">
           <?php if ($produto) { ?>
             <a type="submit" class="btn btn-secondary" href="ver_produtos.php" style="text-decoration: none;">Cancelar</a>
-          <?php } ?>
+            <button type="submit" class="btn btn-primary">Actualizar Produto</button>
+          <?php } else {?>
           <button type="submit" class="btn btn-primary">Adicionar Produto</button>
+          ?>
         </div>
       </form>
     </div>  

@@ -16,17 +16,24 @@
 </head>
 <body>
   <?php include("navbar.php"); ?>
-  
+
+  <div class="container">
   <?php foreach ($produtos as $produto) { ?>
       <div class="produto loading">
           <img src="<?= htmlspecialchars($produto["foto"]) ?>" alt="<?= htmlspecialchars($produto["nome"]) ?>" class="produto-image">
           <div class="produto-content">
-              <h3><?= htmlspecialchars($produto["nome"]) ?></h3>
-              <p><?= htmlspecialchars($produto["descricao"]) ?></p>
-              <p class="preco">AOA <?= number_format($produto['preco'], 2, ',', '.') ?></p>
+              <a href="produto.php?id=<?= $produto["id_produto"] ?>"><?= htmlspecialchars($produto["nome"]) ?></a>
+
+              <div class="preco-quantidade">
+                <p class="preco"><?= number_format($produto['preco'], 2, ',', '.') ?> Kz</p>
+                <select>
+                  <?php for($i = 1;$i<11;$i++){ ?>
+                  <option><?= $i ?></option>
+                  <?php } ?>
+                </select>
+              </div>
           </div>
           <div class="produto-actions">
-              <a href="produto.php?id=<?= $produto["id_produto"] ?>">Ver mais</a>
               <form action="adicionar_carrinho.php" method="POST">
                   <input type="hidden" name="produto_id" value="<?= $produto["id_produto"] ?>">
                   <button type="submit" class="btn">Adicionar ao Carrinho</button>
@@ -42,10 +49,8 @@
     </div>
     HTML;
   } ?>
+  </div>
 
-  <footer>
-    © 2025 AlimentaAngola. Todos os direitos reservados.
-  </footer>
 </body>
 </html>
 

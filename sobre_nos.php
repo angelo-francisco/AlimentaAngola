@@ -22,10 +22,6 @@
       <p>Inclua aqui uma descrição detalhada, características técnicas, ingredientes, modo de uso ou qualquer outra informação relevante.</p>
     </div>
   </div>
-
-  <footer>
-    &copy; 2025 AlimentaAngola. Todos os direitos reservados.
-  </footer>
 </body>
 </html>
 

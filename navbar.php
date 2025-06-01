@@ -14,8 +14,8 @@
                 if (usuario_e_admin()) {
                     echo "<a href='adicionar_produto.php'>Novo Produto</a>";
                     echo "<a href='ver_produtos.php'>Ver Produtos</a>";
-                    echo "<a href='adicionar_produto.php'>Nova Categoria</a>";
-                    echo "<a href='adicionar_produto.php'>Ver Categorias</a>";
+                    echo "<a href='adicionar_categoria.php'>Nova Categoria</a>";
+                    echo "<a href='ver_categorias.php'>Ver Categorias</a>";
                 }
             ?>
             

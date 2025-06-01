@@ -94,7 +94,7 @@
             <button type="submit" class="btn btn-primary">Actualizar Produto</button>
           <?php } else {?>
           <button type="submit" class="btn btn-primary">Adicionar Produto</button>
-          ?>
+          <?php } ?>
         </div>
       </form>
     </div>  
